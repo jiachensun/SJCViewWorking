@@ -6,9 +6,16 @@
 	objectVersion = 46;
 	objects = {
 
+/* Begin PBXBuildFile section */
+		BD577BFE1C75955E0024BD49 /* SJCImageWorking.m in Sources */ = {isa = PBXBuildFile; fileRef = BD577BFD1C75955E0024BD49 /* SJCImageWorking.m */; };
+/* End PBXBuildFile section */
+
 /* Begin PBXFileReference section */
 		BD577BE41C7566700024BD49 /* SJCViewWorking.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = SJCViewWorking.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		BD577BE61C7566700024BD49 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		BD577BFB1C7595340024BD49 /* SJCPrefixHeader.pch */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SJCPrefixHeader.pch; sourceTree = "<group>"; };
+		BD577BFC1C75955E0024BD49 /* SJCImageWorking.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SJCImageWorking.h; sourceTree = "<group>"; };
+		BD577BFD1C75955E0024BD49 /* SJCImageWorking.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SJCImageWorking.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -41,9 +48,20 @@
 		BD577BE51C7566700024BD49 /* SJCViewWorking */ = {
 			isa = PBXGroup;
 			children = (
+				BD577BFC1C75955E0024BD49 /* SJCImageWorking.h */,
+				BD577BFD1C75955E0024BD49 /* SJCImageWorking.m */,
+				BD577BFA1C7594E20024BD49 /* Common */,
 				BD577BE61C7566700024BD49 /* Info.plist */,
 			);
 			path = SJCViewWorking;
+			sourceTree = "<group>";
+		};
+		BD577BFA1C7594E20024BD49 /* Common */ = {
+			isa = PBXGroup;
+			children = (
+				BD577BFB1C7595340024BD49 /* SJCPrefixHeader.pch */,
+			);
+			path = Common;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -112,6 +130,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				BD577BFE1C75955E0024BD49 /* SJCImageWorking.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -217,6 +236,7 @@
 				CODE_SIGN_IDENTITY = "-";
 				COMBINE_HIDPI_IMAGES = YES;
 				DEAD_CODE_STRIPPING = NO;
+				GCC_PREFIX_HEADER = "$(SRCROOT)/SJCViewWorking/Common/SJCPrefixHeader.pch";
 				INFOPLIST_FILE = SJCViewWorking/Info.plist;
 				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Bundles";
 				IPHONEOS_DEPLOYMENT_TARGET = 7.0;
@@ -242,6 +262,7 @@
 				CODE_SIGN_IDENTITY = "-";
 				COMBINE_HIDPI_IMAGES = YES;
 				DEAD_CODE_STRIPPING = NO;
+				GCC_PREFIX_HEADER = "$(SRCROOT)/SJCViewWorking/Common/SJCPrefixHeader.pch";
 				INFOPLIST_FILE = SJCViewWorking/Info.plist;
 				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Bundles";
 				IPHONEOS_DEPLOYMENT_TARGET = 7.0;
@@ -275,6 +296,7 @@
 				BD577BE91C7566700024BD49 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};

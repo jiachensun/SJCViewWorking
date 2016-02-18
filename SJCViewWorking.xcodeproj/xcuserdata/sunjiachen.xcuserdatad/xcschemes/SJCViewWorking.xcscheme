@@ -15,7 +15,7 @@
             <BuildableReference
                BuildableIdentifier = "primary"
                BlueprintIdentifier = "BD577BE31C7566700024BD49"
-               BuildableName = "SJCViewWorking.bundle"
+               BuildableName = "SJCViewWorking.framework"
                BlueprintName = "SJCViewWorking"
                ReferencedContainer = "container:SJCViewWorking.xcodeproj">
             </BuildableReference>
@@ -46,7 +46,7 @@
          <BuildableReference
             BuildableIdentifier = "primary"
             BlueprintIdentifier = "BD577BE31C7566700024BD49"
-            BuildableName = "SJCViewWorking.bundle"
+            BuildableName = "SJCViewWorking.framework"
             BlueprintName = "SJCViewWorking"
             ReferencedContainer = "container:SJCViewWorking.xcodeproj">
          </BuildableReference>
@@ -64,7 +64,7 @@
          <BuildableReference
             BuildableIdentifier = "primary"
             BlueprintIdentifier = "BD577BE31C7566700024BD49"
-            BuildableName = "SJCViewWorking.bundle"
+            BuildableName = "SJCViewWorking.framework"
             BlueprintName = "SJCViewWorking"
             ReferencedContainer = "container:SJCViewWorking.xcodeproj">
          </BuildableReference>
