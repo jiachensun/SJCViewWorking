@@ -49,4 +49,14 @@
  */
 -(UIImage*)getGrayImage:(UIImage*)img;
 
+/**
+ *  图片旋转
+ *
+ *  @param img         待处理图片
+ *  @param orientation 旋转方向
+ *
+ *  @return 结果图片
+ */
+- (UIImage *)rotationImage:(UIImage *)img withOrientation:(UIImageOrientation)orientation;
+
 @end
