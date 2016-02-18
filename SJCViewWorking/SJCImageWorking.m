@@ -25,11 +25,12 @@ static SJCImageWorking *shareInstance = nil;
 
 //四个角的水印
 -(UIImage *)markFourCorners:(UIImage *)img withName:(NSString *)name {
+    
     if (img == nil) {
-        NSLog(@"错误：图片为空！");
+        NSLog(@"错误：图片为空 方法：markFourCorners:withName:");
         return nil;
     } else if (name == nil) {
-        NSLog(@"错误：水印信息为空！");
+        NSLog(@"错误：水印信息为空 方法：markFourCorners:withName:");
         return img;
     }
     NSString* mark = name;
@@ -52,11 +53,12 @@ static SJCImageWorking *shareInstance = nil;
 
 //左上角的水印
 -(UIImage *)markLeftCorner:(UIImage *)img withName:(NSString *)name {
+    
     if (img == nil) {
-        NSLog(@"错误：图片为空！");
+        NSLog(@"错误：图片为空 方法：markLeftCorner:withName:");
         return nil;
     } else if (name == nil) {
-        NSLog(@"错误：水印信息为空！");
+        NSLog(@"错误：水印信息为空 方法：markLeftCorner:withName:");
         return img;
     }
     NSString* mark = name;
@@ -74,4 +76,50 @@ static SJCImageWorking *shareInstance = nil;
     return aimg;
 }
 
+//裁剪图片
+- (UIImage *)cutImage:(UIImage *)img withFrame:(CGRect)frame {
+    
+    if (img == nil) {
+        NSLog(@"错误：图片为空 方法：cutImage:withFrame:");
+        return nil;
+    } else if (frame.size.height == 0 || frame.size.width == 0) {
+        NSLog(@"错误：frame为空 方法：cutImage:withFrame:");
+        return img;
+    }
+    CGImageRef cgImage = img.CGImage;
+    cgImage = CGImageCreateWithImageInRect(cgImage, frame);
+    UIImage *resultImage = [UIImage imageWithCGImage:cgImage];
+    
+    CGImageRelease(cgImage);
+    return resultImage;
+}
+
+//彩色图转灰度图
+-(UIImage*)getGrayImage:(UIImage*)img {
+    
+    if (img == nil) {
+        NSLog(@"错误：图片为空 方法：getGrayImage:");
+        return nil;
+    }
+    CGImageRef cgImage = img.CGImage;
+    int width = img.size.width;
+    int height = img.size.height;
+    CGColorSpaceRef colorSpace = CGColorSpaceCreateDeviceGray();
+    CGContextRef context = CGBitmapContextCreate (nil,width,height,8,0,colorSpace,kCGImageAlphaNone);
+    CGColorSpaceRelease(colorSpace);
+    if (context == NULL) {
+        NSLog(@"异常：context为空 方法：getGrayImage:");
+        return nil;
+    }
+
+    CGContextDrawImage(context,CGRectMake(0, 0, width, height), cgImage);
+    
+    UIImage *grayImage = [UIImage imageWithCGImage:CGBitmapContextCreateImage(context)];
+    CGContextRelease(context);
+    //延迟释放
+    dispatch_after(dispatch_time(DISPATCH_TIME_NOW, (int64_t)(0.5 * NSEC_PER_SEC)), dispatch_get_main_queue(), ^{
+        CFRelease(cgImage);
+    });
+    return grayImage;
+}
 @end
