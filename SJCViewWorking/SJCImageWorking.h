@@ -59,4 +59,14 @@
  */
 - (UIImage *)rotationImage:(UIImage *)img withOrientation:(UIImageOrientation)orientation;
 
+/**
+ *  修改图片尺寸
+ *
+ *  @param img  待处理图片
+ *  @param size 修改尺寸
+ *
+ *  @return 结果图片
+ */
+- (UIImage *)reSizeImage:(UIImage *)img withSize:(CGSize)size;
+
 @end
